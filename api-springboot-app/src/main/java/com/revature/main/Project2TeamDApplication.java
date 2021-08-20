@@ -8,7 +8,7 @@ public class Project2TeamDApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Project2TeamDApplication.class, args);
-		System.out.println("Hello World");
+		//System.out.println("Hello World");
 	}
 
 }
