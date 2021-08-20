@@ -1,4 +1,4 @@
-package com.revature.manager;
+package com.revature.main.manager;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.dao.UserDAO;
-import com.revature.model.UserModel;
+import com.revature.main.dao.UserDAO;
+import com.revature.main.model.UserModel;
 
 @Service
 @Transactional
@@ -60,10 +60,16 @@ public class UserManagerImpl implements UserManager {
 		return user;
 	}
 
-	@Override
-	public UserModel login(String username, String password) {
-		// TODO Auto-generated method stub
-		return dao.login(username, password);
-	}
+//	@Override
+//	public UserModel login(String username, String password) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+//	@Override
+//	public UserModel login(String username, String password) {
+//		// TODO Auto-generated method stub
+//		return dao.login(username, password);
+//	}
 
 }

@@ -1,8 +1,8 @@
-package com.revature.manager;
+package com.revature.main.manager;
 
 import java.util.List;
 
-import com.revature.model.UserModel;
+import com.revature.main.model.UserModel;
 
 public interface UserManager {
 
@@ -16,5 +16,5 @@ public interface UserManager {
 	
 	UserModel delete(UserModel user);
 	
-	UserModel login(String username, String password);
+//	UserModel login(String username, String password);
 }

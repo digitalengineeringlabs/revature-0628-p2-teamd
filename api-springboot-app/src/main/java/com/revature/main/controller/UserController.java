@@ -1,4 +1,4 @@
-package com.revature.controller;
+package com.revature.main.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,28 +19,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.revature.manager.UserManager;
-import com.revature.model.UserModel;
+import com.revature.main.manager.UserManager;
+import com.revature.main.model.UserModel;
 
 @RestController
-@RequestMapping(path = "/user/*")
+@RequestMapping(path = "")
 public class UserController {
 	
 	@Autowired
 	private UserManager manager;
 	
-	@GetMapping(path="/login", consumes = "application/json", produces="application/json")
-	public UserModel login(String username, String password) {
-		System.out.println("login attempted");
-		return manager.login(username, password);
-	}
+//	@GetMapping(path="/login", consumes = "application/json", produces="application/json")
+//	public UserModel login(String username, String password) {
+//		System.out.println("login attempted");
+//		return manager.login(username, password);
+//	}
 	
 	@PostMapping(path = "/create", consumes = "application/json", produces = "application/json")
 	public UserModel create(@Valid @RequestBody UserModel user) {
 		return manager.create(user);
 	}
 	
-	@GetMapping(path = "*/all", produces = "application/json")
+	@GetMapping(path = "/all", produces = "application/json")
 	public List<UserModel> getAllUsers(){
 		return manager.findAll();
 	}
