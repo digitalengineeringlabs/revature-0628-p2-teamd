@@ -1,6 +1,16 @@
 #loginForm{
-
     color: navy;
+    border: 1px solid navy;
     background-color: rgb(197, 197, 197);
+    padding: 5px;
+    margin: 200px;
+}
 
+.formItem{
+    border: 1px solid navy;
+    margin: 10px;
+}
+
+body{
+    background-color: gray;
 }
