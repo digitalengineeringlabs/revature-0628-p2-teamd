@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateAccountComponent } from './components/create-account/create-account.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    CreateExpenseTicketComponent
   ],
   imports: [
     BrowserModule,
