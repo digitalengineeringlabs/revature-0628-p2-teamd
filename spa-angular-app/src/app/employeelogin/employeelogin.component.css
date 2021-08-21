@@ -1,16 +1,30 @@
 #loginForm{
     color: navy;
-    border: 1px solid navy;
-    background-color: rgb(197, 197, 197);
+    border: 1px solid  rgb(194, 194, 255);
+    background-color: white;
     padding: 5px;
     margin: 200px;
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .formItem{
-    border: 1px solid navy;
+    
     margin: 10px;
+    padding: 5px;
 }
 
-body{
-    background-color: gray;
+.txtBox{
+    color: navy;
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 1px solid rgb(194, 194, 255);
+    border-color: rgb(194, 194, 255);
+    background-color: rgb(230, 230, 230);
 }
+
