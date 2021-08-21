@@ -1,6 +1,7 @@
 #loginForm{
-    color: navy;
-    border: 1px solid  rgb(194, 194, 255);
+    color: rgba(0,67,136,255);
+    border: 1px solid  rgba(0,67,136,255);
+
     background-color: white;
     padding: 5px;
     margin: 200px;
@@ -17,14 +18,28 @@
 }
 
 .txtBox{
-    color: navy;
+    border-radius: 5px;
+    color: rgba(0,67,136,255);
     padding: 0;
     height: 30px;
     position: relative;
     left: 0;
     outline: none;
-    border: 1px solid rgb(194, 194, 255);
-    border-color: rgb(194, 194, 255);
+    border: 1px solid rgba(0,67,136,255);
     background-color: rgb(230, 230, 230);
+    padding-left: 5px;
 }
 
+.loginButton{
+    border-radius: 5px;
+    color: rgba(0,67,136,255);
+    border: 1px solid rgba(0,67,136,255);
+    background-color: rgb(230, 230, 230);
+    margin: 10px;
+    padding: 8px;
+
+}
+
+.loginButton:hover{
+    background-image: linear-gradient(darkgray, rgb(230, 230, 230));
+}

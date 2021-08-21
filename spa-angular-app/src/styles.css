@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    color: navy;
+    color: rgba(0,67,136,255);
     background-image: url(C:\Users\smitt\OneDrive\Documents\GitHub\revature-0628-p2-teamd\spa-angular-app\src\assets\p2login.jpg);
     background-repeat: no-repeat;
     background-size: 100% 150%;;
+    font-family: Arial, Helvetica, sans-serif;
 }
