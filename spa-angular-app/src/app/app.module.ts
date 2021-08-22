@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule}   from '@angular/forms';
+import { RouterModule, Routes} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
+
+const routes:Routes = [
+  {path: "login", component: EmployeeloginComponent},
+  {path: "employeehome", component: EmployeehomeComponent}
+]
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +23,9 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
