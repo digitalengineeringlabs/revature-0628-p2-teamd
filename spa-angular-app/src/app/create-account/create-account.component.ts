@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-account',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-account.component.css']
 })
 export class CreateAccountComponent implements OnInit {
-  createUser(item:any) 
-  {
-    console.warn(item);
-  }
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  onSubmit(loginForm:NgForm) { console.log(loginForm) }
 
 }

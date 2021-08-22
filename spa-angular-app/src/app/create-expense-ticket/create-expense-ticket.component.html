@@ -1,13 +1,15 @@
 <h1>Create Expense Ticket</h1>
 
-<form #loginForm="ngForm" (ngSubmit)="createTicket(createTicketForm.value)" >
-    <input type="text" name="reason" placeholder="Enter Reason" ngModel>
+<form class="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <input class="txtBox" type="text" name="reason" placeholder="Enter Reason" ngModel>
     <br><br>
-    <input type="text" name="amount" placeholder="Enter Amount" ngModel>
+    <input class="txtBox" type="text" name="amount" placeholder="Enter Amount" ngModel>
     <br><br>
-    <input type="text" name="time" placeholder="Enter Date/Time" ngModel>
+    <input class="txtBox" type="text" name="time" placeholder="Enter Date/Time" ngModel>
     <br><br>
-    <input type="text" name="userid" placeholder="Enter User Id" ngModel>
+    <input class="txtBox" type="text" name="userid" placeholder="Enter User Id" ngModel>
     <br><br>
-    <button>Submit</button>
+    <input class="txtBox" type="text" name="status" placeholder="Status" ngModel>
+    <br><br>
+    <button class="loginButton" type="submit">Submit</button>
 </form>
