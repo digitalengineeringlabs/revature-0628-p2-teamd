@@ -10,7 +10,7 @@ import { CreateExpenseTicketComponent } from './create-expense-ticket/create-exp
 import { AuthGuard } from './authguard';
 
 
-const routes: Routes=[
+const routes:Routes = [
   { path:"createAcount", component:CreateAccountComponent },
   { path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
 ]
