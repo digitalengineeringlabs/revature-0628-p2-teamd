@@ -9,6 +9,7 @@ import { EmployeeloginComponent } from './employeelogin/employeelogin.component'
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { AuthGuard } from './authgaurd';
 
+
 const routes:Routes = [
   {path: "login", component: EmployeeloginComponent},
   {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]}
