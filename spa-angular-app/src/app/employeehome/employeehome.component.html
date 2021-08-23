@@ -1,1 +1,37 @@
-<p>employeehome works!</p>
+<div class="container" style="text-align: center;">
+    <div class="row">
+        <h1>Employee Home Page</h1>
+    </div>
+    <div class="row">
+        <p><button class="homeButtons" (click)="signOut()" >Sign Out</button></p>
+    </div>
+
+    <!-- use get to get all the tickets for current employee -->
+    <div class="row" >
+        <table class="ticketTable">
+            <tr>
+                <th>Ticket Id</th>
+                <th>Employee ID</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+            <!--ngFor(each ticket){
+                <tr>
+                    <td>load id</td>
+                    <td>load employeeId</td>
+                    <td>load amount</td>
+                    <td>load description</td>
+                    <td>load status</td>
+                <tr>
+            }-->
+        </table>
+    </div>
+
+
+    <div>
+        <button class="homeButtons" (click)="refreshTable()" style="margin-top: 25px;">Refresh</button><br>
+        <button class="homeButtons" (click)="createNewTicket()" style="margin: 25px;">Create New Ticket</button>
+    </div>
+
+</div>
