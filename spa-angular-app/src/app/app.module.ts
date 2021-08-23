@@ -10,7 +10,7 @@ import { CreateExpenseTicketComponent } from './create-expense-ticket/create-exp
 import { AuthGuard } from './authguard';
 
 
-const route: Routes=[
+const routes: Routes=[
   { path:"createAcount", component:CreateAccountComponent },
   { path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
 ]
@@ -24,7 +24,7 @@ const route: Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(route)
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
