@@ -41,6 +41,13 @@ public class UserModel {
 		super();
 	}
 	
+	public UserModel(@NotNull(message = "Username is Required") String username,
+			@NotNull(message = "Password is Required") String password) {
+		super();
+		this.username = username;
+		this.password = password;
+	}
+
 	public UserModel(@NotNull(message = "First Name is Required") String firstName,
 			@NotNull(message = "Last Name is Required") String lastName,
 			@NotNull(message = "Username is Required") String username,
@@ -48,6 +55,19 @@ public class UserModel {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.username = username;
+		this.password = password;
+	}
+
+	public UserModel(@NotNull(message = "First Name is Required") String firstName,
+			@NotNull(message = "Last Name is Required") String lastName, int phoneNumber, String email,
+			@NotNull(message = "Username is Required") String username,
+			@NotNull(message = "Password is Required") String password) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
 		this.username = username;
 		this.password = password;
 	}

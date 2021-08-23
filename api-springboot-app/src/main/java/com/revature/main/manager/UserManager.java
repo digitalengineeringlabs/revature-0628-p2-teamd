@@ -16,5 +16,5 @@ public interface UserManager {
 	
 	UserModel delete(UserModel user);
 	
-//	UserModel login(String username, String password);
+	UserModel findByUserNameAndPassword(UserModel user);
 }

@@ -48,6 +48,7 @@ public class UserManagerImpl implements UserManager {
 			ConstraintViolationException.class }, propagation = Propagation.REQUIRES_NEW)
 	public UserModel create(UserModel user) {
 		// TODO Auto-generated method stub
+		System.out.println(user.toString());
 		return dao.save(user);
 	}
 
@@ -66,10 +67,11 @@ public class UserManagerImpl implements UserManager {
 //		return null;
 //	}
 
-//	@Override
-//	public UserModel login(String username, String password) {
-//		// TODO Auto-generated method stub
-//		return dao.login(username, password);
-//	}
+	@Override
+	public UserModel findByUserNameAndPassword(UserModel user) {
+		// TODO Auto-generated method stub
+		System.out.println(user);
+		return dao.findByUserNameAndPassword( user.getUsername(), user.getPassword());
+	}
 
 }
