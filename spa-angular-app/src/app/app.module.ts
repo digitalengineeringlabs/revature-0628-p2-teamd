@@ -7,18 +7,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeloginComponent } from './employeelogin/employeelogin.component';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
 import { AuthGuard } from './authgaurd';
 
 
 const routes:Routes = [
   {path: "login", component: EmployeeloginComponent},
-  {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]}
+  {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
+  {path:"createAcount", component:CreateAccountComponent },
+  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeloginComponent,
-    EmployeehomeComponent
+    EmployeehomeComponent,
+    CreateAccountComponent,
+    CreateExpenseTicketComponent
   ],
   imports: [
     BrowserModule,
