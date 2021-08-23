@@ -7,10 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
+import { AuthGuard } from './authguard';
+
 
 const route: Routes=[
   { path:"createAcount", component:CreateAccountComponent },
-  { path:"createTicket", component:CreateExpenseTicketComponent }
+  { path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
 ]
 @NgModule({
   declarations: [
