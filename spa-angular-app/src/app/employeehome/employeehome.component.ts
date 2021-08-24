@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-employeehome',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class EmployeehomeComponent implements OnInit {
 
-  constructor(private router:Router) { }
+ tickets:any = [];
+  public _url ='http://localhost:8080/ticket';
+
+  constructor(private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.fetch()
   }
 
   signOut(){
@@ -25,7 +31,14 @@ export class EmployeehomeComponent implements OnInit {
   }
 
   createNewTicket(){
-    //this.router.navigate(['createTicket']);
+    this.router.navigate(['createTicket']);
   }
+
+  fetch(){
+  this.http.get(this._url).subscribe(data=>{
+    console.log(data)
+    this.tickets= data
+  })
+ }
 
 }

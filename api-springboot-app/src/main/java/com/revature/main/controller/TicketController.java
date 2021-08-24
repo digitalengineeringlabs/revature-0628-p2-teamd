@@ -56,7 +56,7 @@ public class TicketController {
 	}
 
 	@PostMapping(consumes = "application/json", produces = "application/json")
-	public Ticket create(@RequestBody Ticket ticket) {
+	public Ticket create(@Valid @RequestBody Ticket ticket) {
 		return manager.create(ticket);
 	}
 

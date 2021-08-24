@@ -47,7 +47,6 @@ public class UserManagerImpl implements UserManager {
 	@Transactional(isolation = Isolation.SERIALIZABLE, rollbackFor = {
 			ConstraintViolationException.class }, propagation = Propagation.REQUIRES_NEW)
 	public UserModel create(UserModel user) {
-		// TODO Auto-generated method stub
 		System.out.println(user.toString());
 		return dao.save(user);
 	}

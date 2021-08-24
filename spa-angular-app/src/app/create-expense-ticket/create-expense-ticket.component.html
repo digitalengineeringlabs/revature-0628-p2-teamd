@@ -1,6 +1,6 @@
 <h1>Create Expense Ticket</h1>
 
-<form class="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+<form class="loginForm"  (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
     <p>Enter Reason <input class="txtBox" type="text" name="reason" placeholder="Enter Reason" ngModel></p>
     <br><br>
     <p>Enter Amount <input class="txtBox" type="text" name="amount" placeholder="Enter Amount" ngModel></p>
@@ -13,3 +13,4 @@
     <br><br>
     <button class="loginButton" type="submit">Submit</button>
 </form>
+

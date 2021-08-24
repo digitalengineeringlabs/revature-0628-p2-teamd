@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-expense-ticket',
@@ -9,14 +11,36 @@ import { Router } from '@angular/router';
 })
 export class CreateExpenseTicketComponent implements OnInit {
 
-  constructor(private router:Router) { }
+public _url = 'http://localhost:8080/ticket';
+
+  constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+    
   }
 
-  onSubmit(loginForm:NgForm) { 
-    console.log(loginForm) 
-    // this.router.navigate(['employeehome']);
+  onSubmit(form:NgForm){ 
+        const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'})}
+
+    console.log(form)
+  // the string used from postman will be put in the json.stringify into the ticket backend
+   this.http.post(this._url,JSON.stringify({
+     reason:form.value.reason,amount:form.value.amount,time:form.value.time,user_id:form.value.userid,
+     status:form.value.status}),httpOptions
+     ).subscribe({
+       next:(data)=>{
+         console.log(data)
+       }
+     })
+      this.router.navigate(['employeehome'])
+    
+
   }
+
+
+
+
 
 }

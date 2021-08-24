@@ -1,11 +1,11 @@
 <h1>Create Account</h1>
 
-<form class="loginForm" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" >
+<form class="loginForm"  (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
     <p>Enter First Name <input class="txtBox" type="text" name="first_name" placeholder="Enter First Name" ngModel></p>
     <br><br>
     <p>Enter Last Name <input class="txtBox" type="text" name="last_name" placeholder="Enter Last Name" ngModel></p>
     <br><br>
-    <p>Enter Phone Number <input class="txtBox" type="text" name="phone_number" placeholder="Enter Phone Number" ngModel></p>
+    <p>Enter Phone Number <input class="txtBox" type="text" name="phone_number" placeholder="Enter Phone Number" maxlength="10" ngModel></p>
     <br><br>
     <p>Enter Email Address <input class="txtBox" type="email" name="email" placeholder="Enter Email Address" ngModel></p>
     <br><br>

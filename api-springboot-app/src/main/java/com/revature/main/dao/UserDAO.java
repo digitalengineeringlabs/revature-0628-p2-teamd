@@ -16,7 +16,7 @@ public interface UserDAO extends JpaRepository<UserModel, Integer>{
 	public List<UserModel> findAll();
 	
 	@Query(value="select u from UserModel u where u.username = :username and u.password = :password")
-	public UserModel findByUserNameAndPassword(@RequestBody @Param("username") String username, @Param("password") String password);
+	public UserModel findByUserNameAndPassword( @Param("username") String username, @Param("password") String password);
 
 	
 	

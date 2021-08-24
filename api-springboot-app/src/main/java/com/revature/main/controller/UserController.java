@@ -24,14 +24,14 @@ import com.revature.main.manager.UserManager;
 import com.revature.main.model.UserModel;
 
 @RestController
-@RequestMapping(path = "users")
+@RequestMapping(path = "/users")
 public class UserController {
 	
 	@Autowired
 	private UserManager manager;
 	
-	@ResponseBody
-	@GetMapping(path="/login", consumes = "application/json", produces="application/json")
+	
+	@PostMapping(path="/login", consumes = "application/json", produces="application/json")
 	public UserModel findByUserNameAndPassword(@RequestBody UserModel user) {
 		System.out.println("login attempted");
 		System.out.println(user);
@@ -43,7 +43,7 @@ public class UserController {
 		return manager.create(user);
 	}
 	
-	@GetMapping(path = "/all", produces = "application/json")
+	@GetMapping( produces = "application/json")
 	public List<UserModel> getAllUsers(){
 		return manager.findAll();
 	}

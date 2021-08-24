@@ -24,7 +24,7 @@ public class UserModel {
 	@NotNull(message = "Last Name is Required")
 	private String lastName;
 	@Column(name = "phone_number")
-	private int phoneNumber;
+	private int phone_number;
 	@Column
 	private String email;
 	@Column(name = "employee_type")
@@ -60,27 +60,27 @@ public class UserModel {
 	}
 
 	public UserModel(@NotNull(message = "First Name is Required") String firstName,
-			@NotNull(message = "Last Name is Required") String lastName, int phoneNumber, String email,
+			@NotNull(message = "Last Name is Required") String lastName, int phone_number, String email,
 			@NotNull(message = "Username is Required") String username,
 			@NotNull(message = "Password is Required") String password) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
+		this.phone_number = phone_number;
 		this.email = email;
 		this.username = username;
 		this.password = password;
 	}
 
 	public UserModel(int uid, @NotNull(message = "First Name is Required") String firstName,
-			@NotNull(message = "Last Name is Required") String lastName, int phoneNumber, String email,
+			@NotNull(message = "Last Name is Required") String lastName, int phone_number, String email,
 			String employeeType, @NotNull(message = "Username is Required") String username,
 			@NotNull(message = "Password is Required") String password) {
 		super();
 		this.uid = uid;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
+		this.phone_number = phone_number;
 		this.email = email;
 		this.employeeType = employeeType;
 		this.username = username;
@@ -107,10 +107,10 @@ public class UserModel {
 		this.lastName = lastName;
 	}
 	public int getPhoneNumber() {
-		return phoneNumber;
+		return phone_number;
 	}
-	public void setPhoneNumber(int phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhoneNumber(int phone_number) {
+		this.phone_number = phone_number;
 	}
 	public String getEmail() {
 		return email;

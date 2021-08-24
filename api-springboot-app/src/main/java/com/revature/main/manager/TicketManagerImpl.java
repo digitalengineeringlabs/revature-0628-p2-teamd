@@ -50,9 +50,7 @@ public class TicketManagerImpl implements TicketManager {
 
 	@Override
 	@Transactional(isolation = Isolation.SERIALIZABLE, rollbackFor = {
-			ConstraintViolationException.class }, propagation = Propagation.REQUIRES_NEW) // override when the
-																							// transaction should
-																							// rollback.
+			ConstraintViolationException.class }, propagation = Propagation.REQUIRES_NEW) // override when the																					// transaction should																// rollback.
 	public Ticket create(Ticket t) {
 		return dao.save(t);
 		

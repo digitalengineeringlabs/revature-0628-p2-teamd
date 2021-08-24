@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule}   from '@angular/forms';
 import { RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import { AuthGuard } from './authgaurd';
 
 
 const routes:Routes = [
-  {path: "", component: EmployeeloginComponent},
+  {path: "login", component: EmployeeloginComponent},
   {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
   {path:"createAcount", component:CreateAccountComponent },
   {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
@@ -31,6 +32,7 @@ const routes:Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
