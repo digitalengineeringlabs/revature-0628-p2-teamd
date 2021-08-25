@@ -9,9 +9,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import lombok.ToString;
+
+@ToString
 @Entity
 @Table(name="user_table")
 public class UserModel {
+	
+	//POJO to hold user data.
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")

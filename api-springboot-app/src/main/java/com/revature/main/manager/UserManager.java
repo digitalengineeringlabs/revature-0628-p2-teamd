@@ -5,6 +5,8 @@ import java.util.List;
 import com.revature.main.model.UserModel;
 
 public interface UserManager {
+	
+//	Prototypes
 
 	List<UserModel> findAll();
 
