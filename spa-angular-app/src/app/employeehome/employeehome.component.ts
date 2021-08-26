@@ -21,17 +21,19 @@ export class EmployeehomeComponent implements OnInit {
 
   signOut(){
     localStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
   refreshTable(){
-
-    //load past tickets here
-
+    this.fetch();
   }
 
   createNewTicket(){
     this.router.navigate(['createTicket']);
+  }
+
+  approveOrDeny(){
+    this.router.navigate(['ticketApproval']);
   }
 
   fetch(){

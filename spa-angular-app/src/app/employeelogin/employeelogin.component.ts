@@ -26,22 +26,22 @@ export class EmployeeloginComponent implements OnInit {
    onSubmit(form:NgForm){
     console.log(form);
     const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'})}
+    headers: new HttpHeaders({'Content-Type':  'application/json'})}
 
-    //make an if statement to check if username and password match in the database for login access
     this.http.post(this._url,JSON.stringify({username:form.value.username,password:form.value.password}),httpOptions
    ).subscribe({
-     next:(data:any)=>{
-      console.log(data)
+       next:(data:any)=>{
+       console.log(data)
        if(data ){
-       localStorage.setItem("username",form.value.username);
-      this.router.navigate(['employeehome'])
+         localStorage.setItem("username",form.value.username);
+         this.router.navigate(['employeehome'])
        }
      
      }
    })
    }
+
+   
    
 }
 

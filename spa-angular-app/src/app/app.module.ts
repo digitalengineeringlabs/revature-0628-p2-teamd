@@ -11,13 +11,15 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
 import { AuthGuard } from './authgaurd';
+import { TicketApprovalComponent } from './ticket-approval/ticket-approval.component';
 
 
 const routes:Routes = [
   {path: "", component: EmployeeloginComponent},
   {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
-  {path:"createAcount", component:CreateAccountComponent },
-  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
+  {path: "createAcount", component:CreateAccountComponent },
+  {path: "createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]},
+  {path: "ticketApproval", component: TicketApprovalComponent, canActivate: [AuthGuard]} 
 ]
 
 @NgModule({
@@ -26,7 +28,8 @@ const routes:Routes = [
     EmployeeloginComponent,
     EmployeehomeComponent,
     CreateAccountComponent,
-    CreateExpenseTicketComponent
+    CreateExpenseTicketComponent,
+    TicketApprovalComponent
   ],
   imports: [
     BrowserModule,
