@@ -18,7 +18,6 @@ import lombok.ToString;
 public class UserModel {
 	
 	//POJO to hold user data.
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_generator")
     @SequenceGenerator(name="id_generator", sequenceName = "user_table_uid_seq", allocationSize = 1)

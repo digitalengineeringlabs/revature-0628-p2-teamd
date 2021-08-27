@@ -33,56 +33,16 @@ public class Ticket {
 	@Column(name="user_id")
 	private int user_id;
 
-	public Date getTime() {
-		return time;
-	}
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
-	public void setReason(String reason) {
-		this.reason = reason;
-	}
-
-	public String getReason() {
-		return reason;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public int getUserId() {
-		return user_id;
-	}
-
-	public void setUserId(int userId) {
-		this.user_id = userId;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public double getAmount() {
-		return amount;
-	}
-
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-
 	public Ticket() {
 		super();
+	}
+	
+	public Ticket(String reason, double amount, Date time, int user_id) {
+		super();
+		this.reason = reason;
+		this.amount = amount;
+		this.time = time;
+		this.user_id = user_id;
 	}
 
 	public Ticket(int id, String reason, double amount, String status,Date time, int user_id) {
@@ -95,7 +55,53 @@ public class Ticket {
 		this.user_id = user_id;
 	}
 
-	
-	
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
+	
 }

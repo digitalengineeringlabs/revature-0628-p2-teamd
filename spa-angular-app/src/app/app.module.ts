@@ -3,6 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule}   from '@angular/forms';
 import { RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +26,7 @@ import { UpdatepasswordComponent } from './updatepassword/updatepassword.compone
 
 const routes:Routes = [
   {path: "", component: EmployeeloginComponent},
-  {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
+  {path:"employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
   {path:"createAcount", component:CreateAccountComponent },
   {path:"updatepassword", component:UpdatepasswordComponent},
   {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
@@ -33,13 +43,20 @@ const routes:Routes = [
     UpdatepasswordComponent
   ],
   imports: [
+    ReactiveFormsModule, 
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ 
 })
 export class AppModule { }

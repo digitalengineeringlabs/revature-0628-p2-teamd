@@ -1,23 +1,29 @@
 <h1>Create Expense Ticket</h1>
 
-<form class="loginForm" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+<form class="expenseForm"(ngSubmit)="onSubmit(expenseForm)" #expenseForm="ngForm">
     <table>
         <p>Reason</p>
         <span>
-        <input type="radio" id="Lodging" name="reason" value="Lodging" ngModel>
-        <label for="Lodging">Lodging</label>
-        <input type="radio" id="Travel" name="reason" value="Travel" ngModel>
-        <label for="Travel">Travel</label>
-        <input type="radio" id="Food" name="reason" value="Food" ngModel>
-        <label for="Food">Food</label>
-        <input type="radio" id="Other" name="reason" value="Other" ngModel>
-        <label for="Other">Other</label>
-    </span>
+            <input type="radio" id="Lodging" id="reason" ngModel name="reason" value="Lodging"#reason="ngModel">
+            <label for="Lodging">Lodging</label>
+            <input type="radio" id="Travel" id="reason"  ngModel name="reason" value="Travel" #reason="ngModel">
+            <label for="Travel">Travel</label>
+            <input type="radio" id="Food" id="reason" ngModel name="reason" value="Food" #reason="ngModel">
+            <label for="Food">Food</label>
+            <input type="radio" id="Other" id="reason" ngModel name="reason" value="Other" #reason="ngModel">
+            <label for="Other">Other</label>
+        </span>
         <br><br>
-        <p>Enter Amount <input class="txtBox" type="text" name="amount" placeholder="Enter Amount" ngModel></p>
+        <p>Enter Amount <input class="txtBox" type="number" id="amount" ngModel name="amount" placeholder="Enter Amount" #amount = "ngModel" required min="0"></p>
+        <br>
+        <p>Enter Date <input class="txtBox" type="date" id="time" ngModel name="time" placeholder="YYYY-MM-DD" #time="ngModel" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"></p>
         <br><br>
-        <p>Enter Date/Time <input class="txtBox" type="text" name="time" placeholder="YYYY-MM-DD" ngModel></p>
-        <br><br>
-        <button class="loginButton" type="submit">Submit</button>
+        <button class="expenseButton" type="submit">Submit</button>
     </table>
+    
+    <div *ngIf="f.reason.touched && f.reason.errors?.required" class="alert">Reason is Required</div>
+    <div *ngIf="f.amount < 0 || amount.errors?.required || f.amount == null" class="alert">Amount is Required</div>
+    <div *ngIf="f.time.errors?.pattern" class="alert">Date is Required</div>
+
+       
 </form>

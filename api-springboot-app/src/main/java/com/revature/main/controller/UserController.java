@@ -1,6 +1,5 @@
 package com.revature.main.controller;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,24 +10,19 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.main.manager.UserManager;
-import com.revature.main.model.Ticket;
 import com.revature.main.model.UserModel;
 
 import lombok.extern.log4j.Log4j2;
@@ -86,8 +80,10 @@ public class UserController {
 	        String fieldName = ((FieldError) error).getField();
 	        String errorMessage = error.getDefaultMessage();
 	        errors.put(fieldName, errorMessage);
-	        log.error(errorMessage);
 	    });
+	    for(Map.Entry<String, String> error : errors.entrySet()) {
+			log.info(error.getKey() + " " + error.getValue());
+		}
 	    return errors;
 	}
 	
@@ -97,7 +93,10 @@ public class UserController {
 			ConstraintViolationException ex) {
 	    Map<String, String> errors = new HashMap<>();
 	    errors.put("message",ex.getCause().getLocalizedMessage());
-	    log.error(errors.toString());
+	    
+	    for(Map.Entry<String, String> error : errors.entrySet()) {
+			log.info(error.getKey() + " " + error.getValue());
+		}
 	    return errors;
 	}
 	

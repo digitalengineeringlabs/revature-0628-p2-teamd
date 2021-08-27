@@ -16,7 +16,7 @@ export class EmployeehomeComponent implements OnInit {
 
 
  tickets:any = [];
-  public _url ='http://localhost:8080/ticket/'+this.id;
+  public _url ='http://localhost:8080/tickets/'+this.id;
 
   constructor(private router:Router,private http:HttpClient) { }
 
