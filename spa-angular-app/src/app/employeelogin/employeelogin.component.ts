@@ -33,7 +33,8 @@ export class EmployeeloginComponent implements OnInit {
     this.http.post(this._url,JSON.stringify({username:form.value.username,password:form.value.password}),httpOptions
    ).subscribe({
      next:(data:any)=>{
-      console.log(data)
+      console.log(data.uid)
+      
        if(data ){
        localStorage.setItem("username",form.value.username);
       this.router.navigate(['employeehome'])
