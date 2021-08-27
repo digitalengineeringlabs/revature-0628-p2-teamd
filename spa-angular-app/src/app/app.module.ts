@@ -22,6 +22,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
 import { AuthGuard } from './authgaurd';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
+import { TicketApprovalComponent } from './ticket-approval/ticket-approval.component';
 
 
 const routes:Routes = [
@@ -30,6 +31,7 @@ const routes:Routes = [
   {path:"createAcount", component:CreateAccountComponent },
   {path:"updatepassword", component:UpdatepasswordComponent},
   {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
+  {path: "ticketApproval", component: TicketApprovalComponent, canActivate: [AuthGuard]} 
   
 ]
 
@@ -40,7 +42,8 @@ const routes:Routes = [
     EmployeehomeComponent,
     CreateAccountComponent,
     CreateExpenseTicketComponent,
-    UpdatepasswordComponent
+    UpdatepasswordComponent,
+    TicketApprovalComponent
   ],
   imports: [
     ReactiveFormsModule, 

@@ -53,9 +53,8 @@ public class TicketController {
 	public List<Ticket> getTickets(@PathVariable int id) {
 		return manager.findByUserId(id);
 	}
-	
-//	Updates tickets based on URL and user input
-	@PatchMapping(path = "/{id}", produces = "application/json")
+//  Updates ticket in DB
+	@PostMapping(path = "update/{id}", produces = "application/json")
 	public Ticket upDateTicket(@PathVariable int id,@Valid @RequestBody Ticket ticket) throws ConfigDataResourceNotFoundException{
 		Ticket ticket1 = manager.findById(id);
 		ticket1.setReason(ticket.getReason());

@@ -14,7 +14,6 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class EmployeeloginComponent implements OnInit {
 
-
   public _url = 'http://localhost:8080/users/login';
 
   constructor(private router:Router,private http:HttpClient) { }
@@ -26,10 +25,8 @@ export class EmployeeloginComponent implements OnInit {
    onSubmit(form:NgForm){
     console.log(form);
     const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'})}
+    headers: new HttpHeaders({'Content-Type':  'application/json'})}
 
-    //make an if statement to check if username and password match in the database for login access
     this.http.post(this._url,JSON.stringify({username:form.value.username,password:form.value.password}),httpOptions
    ).subscribe({
      next:(data:any)=>{
@@ -37,12 +34,15 @@ export class EmployeeloginComponent implements OnInit {
        if(data ){
        localStorage.setItem("username",form.value.username);
        localStorage.setItem("userid",data.uid);
+       localStorage.setItem("employeeType", data.employeeType)
       this.router.navigate(['employeehome'])
        }
      
      }
    })
    }
+
+   
    
 }
 

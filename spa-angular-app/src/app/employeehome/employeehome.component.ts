@@ -11,12 +11,10 @@ import {HttpClient} from '@angular/common/http';
 export class EmployeehomeComponent implements OnInit {
 
   public id = localStorage.getItem("userid");
-  //localStorage.setItem("userid",data.uid);
-  
-
+  public _url ='http://localhost:8080/tickets/'+this.id;
 
  tickets:any = [];
-  public _url ='http://localhost:8080/tickets/'+this.id;
+ role:any = localStorage.getItem("employeeType");
 
   constructor(private router:Router,private http:HttpClient) { }
 
@@ -30,9 +28,7 @@ export class EmployeehomeComponent implements OnInit {
   }
 
   refreshTable(){
-
     this.fetch();
-
   }
 
   createNewTicket(){
@@ -42,11 +38,13 @@ export class EmployeehomeComponent implements OnInit {
   updatePassword(){
     this.router.navigate(['updatepassword']);
   }
+  approveOrDeny(){
+    this.router.navigate(['ticketApproval']);
+  }
 
   fetch(){
   this.http.get(this._url).subscribe(data=>{
-    console.log(data)
-    this.tickets= data
+    this.tickets= data;
   })
  }
 
