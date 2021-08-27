@@ -11,6 +11,7 @@ import {HttpClient} from '@angular/common/http';
 export class EmployeehomeComponent implements OnInit {
 
  tickets:any = [];
+ role:any = localStorage.getItem("employeeType")
   public _url ='http://localhost:8080/ticket';
 
   constructor(private router:Router,private http:HttpClient) { }

@@ -40,8 +40,7 @@
     <div>
         <button class="homeButtons" (click)="refreshTable()" style="margin-top: 25px;">Refresh</button><br>
         <button class="homeButtons" (click)="createNewTicket()" style="margin: 25px;">Create New Ticket</button>
-        <!-- <div *ngIf="user.employeeType === admin"> -->
-        <div>
+         <div *ngIf="role === 'admin'">
             <button class="homeButtons" (click)="approveOrDeny()">Approve Or Deny</button>
         </div>
 

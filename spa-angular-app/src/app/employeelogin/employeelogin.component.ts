@@ -14,7 +14,6 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class EmployeeloginComponent implements OnInit {
 
-
   public _url = 'http://localhost:8080/users/login';
 
   constructor(private router:Router,private http:HttpClient) { }
@@ -34,6 +33,9 @@ export class EmployeeloginComponent implements OnInit {
        console.log(data)
        if(data ){
          localStorage.setItem("username",form.value.username);
+         console.log(data)
+         console.log(data.employeeType)
+         localStorage.setItem("employeeType", data.employeeType)
          this.router.navigate(['employeehome'])
        }
      
