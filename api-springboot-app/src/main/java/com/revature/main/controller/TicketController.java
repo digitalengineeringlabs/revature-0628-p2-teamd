@@ -40,8 +40,8 @@ public class TicketController {
 	}
 
 	@GetMapping(path = "/{id}", produces = "application/json")
-	public Ticket getTicket(@PathVariable int id) {
-		return manager.findById(id);
+	public List<Ticket> getTicket(@PathVariable int id) {
+		return manager.findByUserId(id);
 	}
 	@PatchMapping(path = "/{id}", produces = "application/json")
 	public Ticket upDateTicket(@PathVariable int id,@Valid @RequestBody Ticket ticket) throws ConfigDataResourceNotFoundException{

@@ -10,8 +10,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class EmployeehomeComponent implements OnInit {
 
+  public id = localStorage.getItem("userid");
+  //localStorage.setItem("userid",data.uid);
+  
+
+
  tickets:any = [];
-  public _url ='http://localhost:8080/ticket';
+  public _url ='http://localhost:8080/ticket/'+this.id;
 
   constructor(private router:Router,private http:HttpClient) { }
 
@@ -21,17 +26,21 @@ export class EmployeehomeComponent implements OnInit {
 
   signOut(){
     localStorage.clear();
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
   }
 
   refreshTable(){
 
-    //load past tickets here
+    this.fetch();
 
   }
 
   createNewTicket(){
     this.router.navigate(['createTicket']);
+  }
+
+  updatePassword(){
+    this.router.navigate(['updatepassword']);
   }
 
   fetch(){

@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import lombok.ToString;
@@ -40,6 +41,8 @@ public class UserModel {
 	@Column
 	@NotNull(message = "Password is Required")
 	private String password;
+	@Transient // Added transient property to UserModel
+	private String newpassword;
 	
 	
 	public UserModel() {
@@ -51,6 +54,15 @@ public class UserModel {
 		super();
 		this.username = username;
 		this.password = password;
+	}
+
+	// Added new constructor
+	public UserModel(@NotNull(message = "Username is Required") String username,
+			@NotNull(message = "Password is Required") String password, String newpassword) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.newpassword = newpassword;
 	}
 
 	public UserModel(@NotNull(message = "First Name is Required") String firstName,
@@ -140,6 +152,14 @@ public class UserModel {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getNewpassword() {
+		return newpassword;
+	}
+
+	public void setNewpassword(String newpassword) {
+		this.newpassword = newpassword;
 	}
 	
 	

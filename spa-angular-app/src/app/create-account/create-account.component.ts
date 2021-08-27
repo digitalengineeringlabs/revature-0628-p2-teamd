@@ -34,7 +34,7 @@ public _url = 'http://localhost:8080/users/create';
        }
 
      })
-      this.router.navigate(['login'])  
+      this.router.navigate([''])  
   
   }
 
