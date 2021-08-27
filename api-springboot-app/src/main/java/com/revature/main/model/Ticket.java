@@ -27,7 +27,7 @@ public class Ticket {
 	@Column(name="amount")
 	private double amount;
 	@Column(name="status")
-	private String status;
+	private String status = "Pending";
 	@Column(name="time")
 	private Date time;
 	@Column(name="user_id")

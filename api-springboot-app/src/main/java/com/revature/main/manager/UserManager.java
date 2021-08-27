@@ -17,4 +17,7 @@ public interface UserManager {
 	UserModel delete(UserModel user);
 	
 	UserModel findByUserNameAndPassword(UserModel user);
+	
+	// Added by AP to update password (Interface - UserManager)
+	UserModel updatePassword(UserModel user);
 }

@@ -13,8 +13,10 @@ export class CreateExpenseTicketComponent implements OnInit {
 
 public _url = 'http://localhost:8080/ticket';
 
-  constructor(private http:HttpClient,private router:Router) { }
-
+  constructor(private http:HttpClient,private router:Router) {
+  }
+  
+  userid = localStorage.getItem("userid");
   ngOnInit(): void {
     
   }
@@ -27,20 +29,15 @@ public _url = 'http://localhost:8080/ticket';
     console.log(form)
   // the string used from postman will be put in the json.stringify into the ticket backend
    this.http.post(this._url,JSON.stringify({
-     reason:form.value.reason,amount:form.value.amount,time:form.value.time,user_id:form.value.userid,
-     status:form.value.status}),httpOptions
+     reason:form.value.reason,amount:form.value.amount,time:form.value.time,user_id:this.userid
+     }),httpOptions
      ).subscribe({
        next:(data)=>{
          console.log(data)
        }
      })
       this.router.navigate(['employeehome'])
-    
-
+   
   }
-
-
-
-
 
 }

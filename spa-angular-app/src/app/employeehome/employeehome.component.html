@@ -24,9 +24,9 @@
               
             </tr>
             <tr>
-                <td> <div *ngFor= "let ticket of tickets ">{{ticket.id}}</div> </td>
+                <td> <div *ngFor= "let ticket of tickets ">{{ticket.id}}</div></td>
                 <td> <div  *ngFor= "let ticket of tickets ">{{ticket.time| date }}</div></td>
-                <td><div  *ngFor= "let ticket of tickets ">{{ticket.user_id}}</div></td>
+                <td><div  *ngFor= "let ticket of tickets ">{{ticket.userId}}</div></td>
                 <td> <div *ngFor= "let ticket of tickets ">{{ticket.amount |currency}}</div></td>
                 <td><div  *ngFor= "let ticket of tickets "> {{ticket.reason}}</div></td>
                 <td><div  *ngFor= "let ticket of tickets ">{{ticket.status}}</div></td>
@@ -40,6 +40,7 @@
     <div>
         <button class="homeButtons" (click)="refreshTable()" style="margin-top: 25px;">Refresh</button><br>
         <button class="homeButtons" (click)="createNewTicket()" style="margin: 25px;">Create New Ticket</button>
+        <button class="homeButtons" (click)="updatePassword()" style="margin: 25px;">Update Password</button>
     </div>
 
 </div>

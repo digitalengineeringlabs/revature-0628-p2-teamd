@@ -10,8 +10,10 @@ public interface TicketManager {
 
 	List<Ticket> findAll(int startIndex, int count);
 
-	Ticket findById(int id);
+	List<Ticket> findByUserId(int id);
 
 	Ticket create(Ticket t);
+	
+	Ticket findById(int id);
 
 }

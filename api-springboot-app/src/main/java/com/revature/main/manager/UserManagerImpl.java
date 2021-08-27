@@ -70,7 +70,25 @@ public class UserManagerImpl implements UserManager {
 	public UserModel findByUserNameAndPassword(UserModel user) {
 		// TODO Auto-generated method stub
 		System.out.println(user);
-		return dao.findByUserNameAndPassword( user.getUsername(), user.getPassword());
+		return dao.findByUserNameAndPassword(user.getUsername(), user.getPassword());
 	}
+
+	// Added by AP to update password (UserManagerImpl provides access to database)
+//	@Override
+//	public UserModel updatePassword(UserModel user, String newPassword) {
+//		// TODO Auto-generated method stub
+//		return dao.findByUserNameAndPassword(user.getUsername(), user.getPassword());
+//		
+//	}
+
+	@Override
+	public UserModel updatePassword(UserModel user) {
+		// TODO Auto-generated method stub
+		return dao.save(user);
+	}
+	
+
+	
+	
 
 }

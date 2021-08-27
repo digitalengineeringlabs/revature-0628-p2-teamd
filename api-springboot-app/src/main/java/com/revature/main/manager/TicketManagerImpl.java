@@ -44,10 +44,15 @@ public class TicketManagerImpl implements TicketManager {
 	}
 
 	@Override
+	public List<Ticket> findByUserId(int id) {
+		return dao.findByUserId(Integer.valueOf(id));
+	}
+
+	@Override
 	public Ticket findById(int id) {
 		return dao.findById(Integer.valueOf(id)).get();
 	}
-
+	
 	@Override
 	@Transactional(isolation = Isolation.SERIALIZABLE, rollbackFor = {
 			ConstraintViolationException.class }, propagation = Propagation.REQUIRES_NEW) // override when the																					// transaction should																// rollback.

@@ -11,13 +11,16 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { CreateExpenseTicketComponent } from './create-expense-ticket/create-expense-ticket.component';
 import { AuthGuard } from './authgaurd';
+import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 
 
 const routes:Routes = [
-  {path: "login", component: EmployeeloginComponent},
+  {path: "", component: EmployeeloginComponent},
   {path: "employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
   {path:"createAcount", component:CreateAccountComponent },
+  {path:"updatepassword", component:UpdatepasswordComponent},
   {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
+  
 ]
 
 @NgModule({
@@ -26,7 +29,8 @@ const routes:Routes = [
     EmployeeloginComponent,
     EmployeehomeComponent,
     CreateAccountComponent,
-    CreateExpenseTicketComponent
+    CreateExpenseTicketComponent,
+    UpdatepasswordComponent
   ],
   imports: [
     BrowserModule,
