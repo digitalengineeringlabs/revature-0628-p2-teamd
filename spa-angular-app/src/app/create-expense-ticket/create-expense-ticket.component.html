@@ -21,7 +21,6 @@
         <button class="expenseButton" type="submit">Submit</button>
     </table>
     
-    <div *ngIf="f.reason.touched && f.reason.errors?.required" class="alert">Reason is Required</div>
     <div *ngIf="f.amount < 0 || amount.errors?.required || f.amount == null" class="alert">Amount is Required</div>
     <div *ngIf="f.time.errors?.pattern" class="alert">Date is Required</div>
 

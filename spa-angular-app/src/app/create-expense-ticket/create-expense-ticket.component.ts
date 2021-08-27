@@ -25,7 +25,7 @@ export class CreateExpenseTicketComponent implements OnInit {
 
   ngOnInit(): void {
     this.expenseForm = this.fb.group({
-      reason: new FormControl(this.reason, [Validators.required, Validators.nullValidator]),
+      reason: new FormControl(this.reason, [Validators.required]),
       amount: new FormControl(this.amount, [Validators.required, Validators.min(0)]),
       time: new FormControl(this.time, [Validators.required, Validators.pattern("[0-9]{4}-[0-9]{2}-[0-9]{2}")])
     });
@@ -37,7 +37,7 @@ export class CreateExpenseTicketComponent implements OnInit {
         'Content-Type': 'application/json'
       })
     }
-    if (this.expenseForm.valid) {
+    // if (this.expenseForm.valid) {
       console.log(form)
       // the string used from postman will be put in the json.stringify into the ticket backend
       this.http.post(this._url + this.userid, JSON.stringify({
@@ -50,7 +50,7 @@ export class CreateExpenseTicketComponent implements OnInit {
       })
       this.router.navigate(['employeehome'])
 
-    }
+    // }
   }
 
   get f() {
