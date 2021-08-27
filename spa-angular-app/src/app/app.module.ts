@@ -30,7 +30,7 @@ const routes:Routes = [
   {path:"employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
   {path:"createAcount", component:CreateAccountComponent },
   {path:"updatepassword", component:UpdatepasswordComponent},
-  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
+  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]},
   {path: "ticketApproval", component: TicketApprovalComponent, canActivate: [AuthGuard]} 
   
 ]
