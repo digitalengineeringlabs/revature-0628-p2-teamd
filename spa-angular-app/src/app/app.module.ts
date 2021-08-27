@@ -23,6 +23,7 @@ import { CreateExpenseTicketComponent } from './create-expense-ticket/create-exp
 import { AuthGuard } from './authgaurd';
 import { UpdatepasswordComponent } from './updatepassword/updatepassword.component';
 import { TicketApprovalComponent } from './ticket-approval/ticket-approval.component';
+import { AdminviewComponent } from './adminview/adminview.component';
 
 
 const routes:Routes = [
@@ -30,9 +31,9 @@ const routes:Routes = [
   {path:"employeehome", component: EmployeehomeComponent , canActivate: [AuthGuard]},
   {path:"createAcount", component:CreateAccountComponent },
   {path:"updatepassword", component:UpdatepasswordComponent},
-  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]}
-  {path: "ticketApproval", component: TicketApprovalComponent, canActivate: [AuthGuard]} 
-  
+  {path:"createTicket", component:CreateExpenseTicketComponent,  canActivate: [AuthGuard]},
+  {path: "ticketApproval", component: TicketApprovalComponent, canActivate: [AuthGuard]}, 
+  {path: "adminView", component: AdminviewComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({
@@ -43,7 +44,8 @@ const routes:Routes = [
     CreateAccountComponent,
     CreateExpenseTicketComponent,
     UpdatepasswordComponent,
-    TicketApprovalComponent
+    TicketApprovalComponent,
+    AdminviewComponent
   ],
   imports: [
     ReactiveFormsModule, 

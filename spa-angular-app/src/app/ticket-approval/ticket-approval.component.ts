@@ -15,7 +15,7 @@ export class TicketApprovalComponent implements OnInit {
   currentTicket:any;
   idNum:number = 0;
 
-  public _url ='http://localhost:8080/ticket';
+  public _url ='http://localhost:8080/tickets/admin';
 
   constructor(private router:Router, private http:HttpClient) { }
 

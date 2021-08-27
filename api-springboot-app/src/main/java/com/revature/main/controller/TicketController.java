@@ -43,7 +43,7 @@ public class TicketController {
 	private TicketManager manager;
 	
 //	 Finds all entries in DB
-	@GetMapping(produces = "application/json")
+	@GetMapping(path="/admin", produces = "application/json")
 	public List<Ticket> getAllTickets() {
 		return manager.findAll();
 	}

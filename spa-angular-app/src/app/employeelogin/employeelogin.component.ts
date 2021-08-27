@@ -35,7 +35,11 @@ export class EmployeeloginComponent implements OnInit {
        localStorage.setItem("username",form.value.username);
        localStorage.setItem("userid",data.uid);
        localStorage.setItem("employeeType", data.employeeType)
-      this.router.navigate(['employeehome'])
+       if(data.employeeType === "admin"){
+        this.router.navigate(['adminView'])
+       } else{
+        this.router.navigate(['employeehome'])
+       }
        }
      
      }
